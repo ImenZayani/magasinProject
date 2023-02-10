@@ -1,2 +1,4 @@
-package tn.esprit._cinfogl1.magasinproject.DAO.Entities;public enum TypePersonnel {
+package tn.esprit._cinfogl1.magasinproject.DAO.Entities;
+
+public enum TypePersonnel {
 }
