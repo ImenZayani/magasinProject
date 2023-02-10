@@ -3,7 +3,10 @@ import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 import tn.esprit._cinfogl1.magasinproject.DAO.Entities.Client;
 
+import java.util.List;
+
 @Repository
 public interface ClientRepository extends CrudRepository<Client, Integer> {
     Client findByCin(long cin);
+    List<Client> findByMagasinsNomMagasin(String nomMagasin);
 }

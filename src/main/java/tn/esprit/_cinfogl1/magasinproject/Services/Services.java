@@ -52,8 +52,6 @@ public class Services implements IServices {
         //On affecte le child au parent
         client.getMagasins().add(magasin);
         clientRepository.save(client);
-
-
     }
 
     @Override
@@ -65,9 +63,7 @@ public class Services implements IServices {
         carteFid.setSolde(0);
         client.setCarteFid(carteFid);
         clientRepository.save(client);
-
     }
-
     @Override
     public long effectuerOperation(String typeOperation, long numCarte, int montant) {
         CarteFid carteFid = carteFidRepository.findByNumCarte(numCarte);
@@ -80,6 +76,10 @@ public class Services implements IServices {
             carteFid = carteFidRepository.save(carteFid);
         }
         return  carteFid.getSolde();
+    }
+    @Override
+    public List<Client> afficherClients(String nomMagasin) {
+        return clientRepository.findByMagasinsNomMagasin(nomMagasin);
     }
 
 }

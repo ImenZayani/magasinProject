@@ -8,6 +8,8 @@ import tn.esprit._cinfogl1.magasinproject.DAO.Entities.Client;
 import tn.esprit._cinfogl1.magasinproject.DAO.Entities.Magasin;
 import tn.esprit._cinfogl1.magasinproject.Services.IServices;
 
+import java.util.List;
+
 @RestController
 public class RestControllers {
 
@@ -37,6 +39,11 @@ public class RestControllers {
     @PutMapping("effectuerOperation")
     long effectuerOperation(@RequestParam String typeOperation,@RequestParam long numCarte,@RequestParam int montant){
         return iServices.effectuerOperation(typeOperation, numCarte, montant);
+    }
+
+    @GetMapping("afficherClients")
+    List<Client> afficherClients(String nomMagasin) {
+        return  iServices.afficherClients(nomMagasin);
     }
 
 }
